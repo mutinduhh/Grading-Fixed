@@ -1,2 +1,35 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+<html>
+<body>
+    <h2>Student Grade Calculator</h2>
+    <p>Enter the student's mark:</p>
+    <input type="number" id="mark" min="0" max="100">
+    <button onclick="calculateGrade()">Calculate Grade</button>
+    <p id="result"></p>
+
+    <script>
+        function calculateGrade() {
+            var mark = document.getElementById("mark").value;
+            var grade = "";
+
+            if (mark > 100 || mark < 0) {
+                grade = "Invalid mark. Please enter a mark between 0 and 100.";
+            } else if (mark > 70) {
+                grade = "A";
+            } else if (mark >= 60) {
+                grade = "B";
+            } else if (mark >= 50) {
+                grade = "C";
+            } else if (mark >= 40) {
+                grade = "D";
+            } else {
+                grade = "E";
+            }
+
+            document.getElementById("result").innerHTML = "Grade: " + grade;
+        }
+    </script>
+</body>
+</html>
+
